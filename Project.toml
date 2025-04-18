@@ -1,0 +1,16 @@
+name = "Tracker3D"
+uuid = "fca96f6d-553e-4686-8248-95999c25ca35"
+authors = ["William Guimont-Martin <wil9876543210@hotmail.com>"]
+version = "0.1.0"
+
+[deps]
+AprilTags = "f0fec3d5-a81e-5a6a-8c28-d2b34f3659de"
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+MeshIO = "7269a6da-0436-5bbc-96c2-40638cbb6118"
+Meshes = "eacbb407-ea5a-433e-ab97-5258b1ca43fa"
+
+[compat]
+AprilTags = "0.9.1"
+FileIO = "1.17.0"
+MeshIO = "0.5.3"
+Meshes = "0.53.5"
