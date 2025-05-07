@@ -119,26 +119,39 @@ function visualize_tag(tag_data, filename::String)
 end
 
 function main()
-    output_dir = "output/"
-    if !isdir(output_dir)
-        mkdir(output_dir)
+    if length(ARGS) < 5
+        println("Usage: julia your_script.jl <output_dir> <tag_id> <square_size> <total_tag_height> <layer_height>")
+        println("\tsquare_size: size in mm of each square on the tag, so that the full tag is of size 10*square_size (5.0)")
+        println("\ttotal_tag_height: height in mm of the full 3D tag (1.0)")
+        println("\tlayer_height: size of the black top layer in mm (0.2)")
+        return
     end
 
-    tag_id = 0
-    layer_height = 0.2
-    total_tag_height = 1.0
+    output_dir = ARGS[1]
+    tag_id = parse(Int, ARGS[2])
+    square_size = parse(Float64, ARGS[3])
+    total_tag_height = parse(Float64, ARGS[4])
+    layer_height = parse(Float64, ARGS[5])
+
+    if !isdir(output_dir)
+        mkpath(output_dir)
+    end
 
     height_black = total_tag_height
     height_white = total_tag_height - layer_height
 
-    for tag_id in 0:10
-        tag_data = get_tag_data(tag_id)
-        visualize_tag(tag_data, "$(output_dir)/apriltag_tag36h11_id$(tag_id)")
-        generate_3d_model(tag_data, "$(output_dir)/apriltag_tag36h11_id$(tag_id)_3d", square_size=5.0, height_black=height_black, height_white=height_white)
-        @printf "Tag ID: %d\n" tag_id
-    end
+    tag_data = get_tag_data(tag_id)
+    visualize_tag(tag_data, "$(output_dir)/apriltag_tag36h11_id$(tag_id)")
+    generate_3d_model(
+        tag_data,
+        "$(output_dir)/apriltag_tag36h11_id$(tag_id)_3d",
+        square_size=square_size,
+        height_black=height_black,
+        height_white=height_white
+    )
+    @printf "Tag ID: %d\n" tag_id
 end
 
 main()
 
-end # module Tracker3D
+end # module
