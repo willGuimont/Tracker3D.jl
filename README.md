@@ -8,10 +8,10 @@ Pre-generated models are available on [Tracking Cube](https://www.thingiverse.co
 To generate a 3D model of a tag, run the following command:
 
 ``` shell
-julia --project=. --threads=auto src/Tracker3D.jl data/tags <tag_id> <square_size> <tag_height> <layer_height>
+julia --project=. src/Tracker3D.jl <output_dir> <tag_id> <square_size> <tag_height> <layer_height>
 
 # For example
-julia --project=. --threads=auto src/Tracker3D.jl data/tags 0 5.0 1.0 0.2
+julia --project=. src/Tracker3D.jl data/tags 0 5.0 1.0 0.2
 ```
 
 ## Usage

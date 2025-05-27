@@ -121,9 +121,11 @@ end
 function main()
     if length(ARGS) < 5
         println("Usage: julia your_script.jl <output_dir> <tag_id> <square_size> <total_tag_height> <layer_height>")
-        println("\tsquare_size: size in mm of each square on the tag, so that the full tag is of size 10*square_size (5.0)")
-        println("\ttotal_tag_height: height in mm of the full 3D tag (1.0)")
-        println("\tlayer_height: size of the black top layer in mm (0.2)")
+        println("<output_dir>: directory in which to generate the tag")
+        println("<tad_id>: ID of the tag to generate")
+        println("<square_size> size in mm of each square on the tag, so that the full tag is of size 10*square_size (5.0)")
+        println("<total_tag_height> height in mm of the full 3D tag (1.0)")
+        println("<layer_height> size of the black top layer in mm (0.2)")
         return
     end
 
