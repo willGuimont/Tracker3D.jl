@@ -1,0 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ' Tracker3D.jl'
+message: >-
+  Tracker3D is a Julia-based tool for generating
+  3D-printable models of AprilTags.
+type: software
+authors:
+  - given-names: William
+    family-names: Guimont-Martin
+    email: william.guimont-martin@norlab.ulaval.ca
+    affiliation: Université Laval
+    orcid: 'https://orcid.org/0000-0002-8850-8399'
+repository-code: 'https://github.com/willGuimont/Tracker3D.jl/tree/master'
+url: 'https://github.com/willGuimont/Tracker3D.jl/tree/master'
+abstract: >-
+  Tracker3D is a Julia-based tool for generating
+  3D-printable models of AprilTags.
+keywords:
+  - AprilTag
+  - Computer Vision
+  - Tracking
+license: MIT
